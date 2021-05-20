@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: take-away-order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: chenkesi3104
+    url: jdbc:mysql://localhost:3306/take_away?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      #defaultZone: http://101.200.128.57:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+
+transaction:
+  rabbitmq:
+    host: 101.200.128.57
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+    service: ${spring.application.name}
+    resendTimes: 3
+    dlxEnabled: true
+    resendFreq: 5000L

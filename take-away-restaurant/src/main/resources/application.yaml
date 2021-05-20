@@ -1,0 +1,45 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: take-away-restaurant
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: chenkesi3104
+    url: jdbc:mysql://localhost:3306/take_away?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  kafka:
+    # 指定kafka 代理地址，可以多个
+    bootstrap-servers:
+    producer:
+      # 每次批量发送消息的数量
+      batch-size: 16384
+      buffer-memory: 33554432
+      # 指定消息key和消息体的编解码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: user-log-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      #defaultZone: http://101.200.128.57:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+transaction:
+  rabbitmq:
+    host: 101.200.128.57
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+    service: ${spring.application.name}

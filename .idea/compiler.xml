@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="take-away-eureka" />
+        <module name="take-away-restaurant" />
+        <module name="authorization-service" />
+        <module name="take-away-order" />
+        <module name="security-framework" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authorization-service" target="1.8" />
+      <module name="security-framework" target="1.8" />
+      <module name="take-away-eureka" target="1.8" />
+      <module name="take-away-order" target="1.8" />
+      <module name="take-away-restaurant" target="1.8" />
+      <module name="transaction-rabbitmq" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authorization-service" options="-parameters" />
+      <module name="security-framework" options="-parameters" />
+      <module name="take-away-eureka" options="-parameters" />
+      <module name="take-away-order" options="-parameters" />
+      <module name="take-away-restaurant" options="-parameters" />
+      <module name="transaction-rabbitmq" options="-parameters" />
+    </option>
+  </component>
+</project>

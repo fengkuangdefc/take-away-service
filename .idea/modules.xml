@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/authorization-service/authorization-service.iml" filepath="$PROJECT_DIR$/authorization-service/authorization-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security-framework/security-framework.iml" filepath="$PROJECT_DIR$/security-framework/security-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/take-away-eureka/take-away-eureka.iml" filepath="$PROJECT_DIR$/take-away-eureka/take-away-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/take-away-order/take-away-order.iml" filepath="$PROJECT_DIR$/take-away-order/take-away-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/take-away-restaurant/take-away-restaurant.iml" filepath="$PROJECT_DIR$/take-away-restaurant/take-away-restaurant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transaction-rabbitmq/transaction-rabbitmq.iml" filepath="$PROJECT_DIR$/transaction-rabbitmq/transaction-rabbitmq.iml" />
+    </modules>
+  </component>
+</project>
